@@ -9,3 +9,4 @@ func _physics_process(delta):
 		chicken_obj.transform = global_transform
 		chicken_obj.rotation.y = $"../..".rotation.y
 		chicken_obj.rotation.x = $"..".rotation.x
+		chicken_obj.force()

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cx4qoh2gbsfba"]
 
 [ext_resource type="Script" path="res://Modules/Player/scripts/player.gd" id="1_6gok4"]
-[ext_resource type="Script" path="res://Modules/Player/scripts/ChickenSpawnerTest.gd" id="2_kpqhb"]
+[ext_resource type="PackedScene" uid="uid://brm077tw7hd5w" path="res://Modules/Chicken Gun/chicken_gun.tscn" id="2_6mfof"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bp4r2"]
 
@@ -17,6 +17,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 [node name="Camera3D" type="Camera3D" parent="Neck"]
 current = true
 
-[node name="ChickenSpawnerTest" type="Marker3D" parent="Neck"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.5, -1)
-script = ExtResource("2_kpqhb")
+[node name="Chicken Gun" parent="Neck" instance=ExtResource("2_6mfof")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.355, -0.53)

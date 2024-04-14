@@ -1,14 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://bata6ub200sna"]
+[gd_scene load_steps=5 format=3 uid="uid://bata6ub200sna"]
+
+[ext_resource type="Script" path="res://Modules/Chicken/scripts/chicken.gd" id="1_ed1sj"]
+[ext_resource type="PackedScene" uid="uid://baw7ey1srlmrf" path="res://Assets/Models/Chicken/chicken.glb" id="2_407al"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_j1tat"]
+radius = 0.25
 
 [sub_resource type="BoxMesh" id="BoxMesh_o6yel"]
 size = Vector3(0.5, 0.5, 0.5)
 
 [node name="Chicken" type="RigidBody3D"]
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_ed1sj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_j1tat")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("BoxMesh_o6yel")
+
+[node name="chicken" parent="." instance=ExtResource("2_407al")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
